@@ -54,7 +54,7 @@ public class World {
 						//Inimigo Vermelho
 						Enemy e = new Enemy(xx * World.TILE_SIZE, yy * World.TILE_SIZE, 16, 16, 1, Entity.ENEMY_RED);
 						Game.entities.add(e);
-					} else if(pixelAtual == 0xFFDD6CA7) {
+					} else if(pixelAtual == 0xFFDBABC4) {
 						//Inimigo Rosa
 						Enemy e = new Enemy(xx * World.TILE_SIZE, yy * World.TILE_SIZE, 16, 16, 1, Entity.ENEMY_PINK);
 						Game.entities.add(e);

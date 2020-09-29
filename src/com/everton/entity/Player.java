@@ -15,7 +15,7 @@ public class Player extends Entity {
 	}
 	public Directions lastDir = Directions.RIGHT;
 	
-	private int frames = 0, maxFrames = 7, index = 0, maxIndex = 3;
+	private int frames = 0, maxFrames = 3, index = 0, maxIndex = 3;
 	private boolean moved = false;
 	public BufferedImage[] spriteRight, spriteLeft, spriteUp, spriteDown;
 
