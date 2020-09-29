@@ -40,7 +40,6 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 	private BufferedImage image;
 	
 	public static List<Entity> entities;
-	public static List<Entity> fruits;
 	public static Spritesheet spritesheet;
 	public static World world;
 	public static Player player;
@@ -61,11 +60,9 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 		//Inicializando Objetos
 		Game.spritesheet = new Spritesheet("/spritesheet.png");
 		Game.entities = new ArrayList<>();
-		Game.fruits = new ArrayList<>();
 		Game.player = new Player(0, 0, 16, 16, 1, null);
 		Game.world = new World("/level_1.png");
 		this.ui = new UI();
-		Game.entities = new ArrayList<>();
 		
 		Game.entities.add(player);
 	}
@@ -133,11 +130,6 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 		Game.world.render(g);
 		
 		Collections.sort(Game.entities, Entity.entitySorter);
-		
-		for(int i = 0; i < Game.fruits.size(); i++) {
-			Entity e = Game.fruits.get(i);
-			e.render(g);
-		}
 		
 		for(int i = 0; i < Game.entities.size(); i++) {
 			Entity e = Game.entities.get(i);

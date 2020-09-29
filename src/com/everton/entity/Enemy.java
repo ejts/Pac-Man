@@ -7,7 +7,7 @@ public class Enemy extends Entity {
 
 	public Enemy(double x, double y, int width, int height, double speed, BufferedImage sprite) {
 		super(x, y, width, height, speed, sprite);
-		this.depth = 0;
+		this.depth = 1;
 	}
 	
 	@Override
@@ -36,7 +36,7 @@ public class Enemy extends Entity {
 	}
 	
 	public void render(Graphics g) {
-		
+		super.render(g);
 	}
 
 }

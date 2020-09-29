@@ -15,14 +15,13 @@ public class Player extends Entity {
 	}
 	public Directions lastDir = Directions.RIGHT;
 	
-
 	private int frames = 0, maxFrames = 7, index = 0, maxIndex = 3;
 	private boolean moved = false;
 	public BufferedImage[] spriteRight, spriteLeft, spriteUp, spriteDown;
 
 	public Player(double x, double y, int width, int height, double speed, BufferedImage sprite) {
 		super(x, y, width, height, speed,sprite);
-		this.depth = 1;
+		this.depth = 2;
 
 		this.spriteRight = new BufferedImage[3];
 		this.spriteLeft = new BufferedImage[3];
@@ -89,14 +88,14 @@ public class Player extends Entity {
 	}
 	
 	public void isCollisionFruit() {
-		for(int i = 0; i < Game.fruits.size(); i++) {
-			Entity e = Game.fruits.get(i);
-			
-			if(Entity.isColidding(this, e)) {
-				Game.curFruits++;
-				Game.entities.remove(e);
-				Game.fruits.remove(e);
-				return;
+		for(int i = 0; i < Game.entities.size(); i++) {
+			Entity e = Game.entities.get(i);
+			if(e instanceof Cherry) {
+				if(Entity.isColidding(this, e)) {
+					Game.curFruits++;
+					Game.entities.remove(e);
+					return;
+				}
 			}
 		}
 	}

@@ -16,10 +16,11 @@ import com.everton.world.World;
 public class Entity {
 	
 	public final static BufferedImage CHERRY_SPRITE = Game.spritesheet.getSprite(80, 0, 16, 16);
+	public final static BufferedImage ENEMY_RED = Game.spritesheet.getSprite(32, 64, 16, 16);
+	public final static BufferedImage ENEMY_PINK = Game.spritesheet.getSprite(32, 80, 16, 16);
 	
 	public double x;
 	public double y;
-	protected int z;
 	protected int width;
 	protected int height;
 	protected double speed;
@@ -131,7 +132,7 @@ public class Entity {
 		Rectangle e1Mask = new Rectangle(e1.getX(), e1.getY(), e1.getWidth(), e1.getHeight());
 		Rectangle e2Mask = new Rectangle(e2.getX(), e2.getY(), e2.getWidth(), e2.getHeight());
 	
-		if(e1Mask.intersects(e2Mask) && e1.z == e2.z) {
+		if(e1Mask.intersects(e2Mask)) {
 			return true;
 		}
 		

@@ -7,6 +7,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import com.everton.entity.Cherry;
+import com.everton.entity.Enemy;
 import com.everton.entity.Entity;
 import com.everton.main.Game;
 
@@ -45,14 +46,18 @@ public class World {
 						Game.player.setX(xx * World.TILE_SIZE);
 						Game.player.setY(yy * World.TILE_SIZE);
 						tiles[xx + (yy * World.WIDTH)] = new FloorTile(xx * World.TILE_SIZE, yy * World.TILE_SIZE, Tile.TILE_FLOOR);
-					} else if(pixelAtual == 0xFFFF0000) {
-						//Inimigo
-						
 					} else if(pixelAtual == 0xFFFFD800) {
 						//Cereja
-						Game.entities.add(new Cherry(xx * 16, yy * 16, 16, 16, 0, Entity.CHERRY_SPRITE));
-						Game.fruits.add(new Cherry(xx * 16, yy * 16, 16, 16, 0, Entity.CHERRY_SPRITE));
+						Game.entities.add(new Cherry(xx * World.TILE_SIZE, yy * World.TILE_SIZE, 16, 16, 0, Entity.CHERRY_SPRITE));
 						Game.countFruits++;
+					} else if(pixelAtual == 0xFFE0281A) {
+						//Inimigo Vermelho
+						Enemy e = new Enemy(xx * World.TILE_SIZE, yy * World.TILE_SIZE, 16, 16, 1, Entity.ENEMY_RED);
+						Game.entities.add(e);
+					} else if(pixelAtual == 0xFFDD6CA7) {
+						//Inimigo Rosa
+						Enemy e = new Enemy(xx * World.TILE_SIZE, yy * World.TILE_SIZE, 16, 16, 1, Entity.ENEMY_PINK);
+						Game.entities.add(e);
 					}
 				}
 			}
