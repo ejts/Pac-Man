@@ -16,7 +16,7 @@ public class Player extends Entity {
 	public Directions lastDir = Directions.RIGHT;
 	
 
-	private int frames = 0, maxFrames = 9, index = 0, maxIndex = 3;
+	private int frames = 0, maxFrames = 7, index = 0, maxIndex = 3;
 	private boolean moved = false;
 	public BufferedImage[] spriteRight, spriteLeft, spriteUp, spriteDown;
 
@@ -28,22 +28,22 @@ public class Player extends Entity {
 		this.spriteLeft = new BufferedImage[3];
 		this.spriteUp = new BufferedImage[3];
 		this.spriteDown = new BufferedImage[3];
-		
-		this.spriteRight[0] = Game.spritesheet.getSprite(32, 0, 16, 16);
-		this.spriteRight[1] = Game.spritesheet.getSprite(48, 0, 16, 16);
-		this.spriteRight[2] = Game.spritesheet.getSprite(64, 0, 16, 16);
-		
-		this.spriteLeft[0] = Game.spritesheet.getSprite(32, 16, width, height);
-		this.spriteLeft[1] = Game.spritesheet.getSprite(48, 16, width, height);
-		this.spriteLeft[2] = this.spriteRight[2];
-		
-		this.spriteUp[0] = Game.spritesheet.getSprite(32, 32, width, height);
-		this.spriteUp[1] = Game.spritesheet.getSprite(48, 32, width, height);
-		this.spriteUp[2] = this.spriteRight[2];
-		
-		this.spriteDown[0] = Game.spritesheet.getSprite(32, 48, width, height);
-		this.spriteDown[1] = Game.spritesheet.getSprite(48, 48, width, height);
-		this.spriteDown[2] = this.spriteRight[2];
+
+		this.spriteRight[0] = Game.spritesheet.getSprite(64, 0, 16, 16);
+		this.spriteRight[1] = Game.spritesheet.getSprite(32, 0, 16, 16);
+		this.spriteRight[2] = Game.spritesheet.getSprite(48, 0, 16, 16);
+
+		this.spriteLeft[0] = this.spriteRight[0];
+		this.spriteLeft[1] = Game.spritesheet.getSprite(32, 16, width, height);
+		this.spriteLeft[2] = Game.spritesheet.getSprite(48, 16, width, height);
+
+		this.spriteUp[0] = this.spriteRight[0];
+		this.spriteUp[1] = Game.spritesheet.getSprite(32, 32, width, height);
+		this.spriteUp[2] = Game.spritesheet.getSprite(48, 32, width, height);
+
+		this.spriteDown[0] = this.spriteRight[0];
+		this.spriteDown[1] = Game.spritesheet.getSprite(32, 48, width, height);
+		this.spriteDown[2] = Game.spritesheet.getSprite(48, 48, width, height);
 	}
 	
 	@Override

@@ -57,7 +57,7 @@ public class Sound {
 		}
 	}
 
-	public final static Clips LINK_HURT = Sound.load("/link_hurt.wav", 1);
+	public final static Clips PLAYER_HURT = Sound.load("/player_hurt.wav", 1);
 	
 	private static Clips load(String name, int count) {
 		try {
